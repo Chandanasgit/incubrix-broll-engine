@@ -8,8 +8,7 @@
 
 | faster-whisper | 1.2.1 | MIT | Speech to text with word timings | verified (pip metadata) |
 
-| piper-tts | 1.8.0 | GPL-3.0-or-later | Text to speech, called only as a separate CLI process behind an adapter | verified (pip metadata). Copyleft risk, see REPORT.md |
-
+| Piper voice en_US-ljspeech-medium | Public domain (per MODEL_CARD; dataset: LJ Speech, keithito.com/LJ-Speech-Dataset) | Narration voice | verified |
 | open\_clip\_torch | 4.2.2 | MIT | Matching footage to text by meaning | verified (pip metadata) |
 
 | sentence-transformers | 6.3.0 | Apache-2.0 | Text embeddings | verified (pip metadata) |
@@ -19,7 +18,7 @@
 | FastAPI | 0.165.0 | MIT | HTTP API | verified (pip metadata) |
 
 | httpx | 0.28.1 | BSD-3-Clause | HTTP client for footage APIs | verified (pip metadata) |
-
+- Amy voice was evaluated and rejected: repo licence is CC BY-SA 4.0 with an unresolved ShareAlike question and a mixed training history. LJSpeech is used instead.
 
 
 \## Models and weights
