@@ -31,7 +31,7 @@
 
 | Piper voice en\_US-amy-medium | verify on MODEL\_CARD | Narration voice | verify |
 
-| CLIP weights (exact pretrained tag TBD) | verify on model card | Matching | verify |
+| CLIP ViT-B-32 (laion2b_s34b_b79k) via open_clip | MIT (Hugging Face licence tag) | Ranking stock thumbnails against scene text | verified licence. Model card advises research use and says deployed use needs in-domain testing; used only to rank licence-clean stock thumbnails, never for faces or identification. See REPORT.md |
 
 | all-MiniLM-L6-v2 (if used) | verify on model card | Text embeddings | verify |
 
