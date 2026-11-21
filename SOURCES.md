@@ -77,3 +77,6 @@ These rules come from the Pixabay and NASA terms above. They are planned behavio
 
 10\. \*\*Keys stay out of the repo.\*\* Provider keys come from environment variables only. (done: .env is gitignored)
 
+
+| spaCy | <version from pip show spacy> | MIT | Noun-phrase extraction for search queries | verified (pip metadata) |
+| en_core_web_sm (spaCy model) | <version> | <licence from pip show> | English grammar tagging | verified on 22 Nov 2026 |

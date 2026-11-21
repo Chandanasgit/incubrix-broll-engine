@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .asr import transcribe
 from .errors import PipelineError
+from .llm import LLMError, merge_queries
 from .fallback import make_fallback_clip
 from .providers.base import Clip
 from .queries import build_queries
@@ -44,7 +45,7 @@ def _write_json(path, obj):
 
 
 def run_pipeline(audio_path, out_dir, *, providers, scorer, ratios=("16:9",), avoid=None,
-                 captions=None, job_id=None, transcribe_fn=transcribe, progress=None):
+                 captions=None, job_id=None, transcribe_fn=transcribe, progress=None, query_writer=None):
     t_start = time.time()
     job_id = job_id or uuid.uuid4().hex[:12]
     captions = captions or {"burn_in": True, "srt": True}
@@ -89,8 +90,16 @@ def run_pipeline(audio_path, out_dir, *, providers, scorer, ratios=("16:9",), av
     for i, sc in enumerate(scenes):
         progress(10 + int(50 * i / len(scenes)), "choosing footage for scene %d of %d" % (i + 1, len(scenes)))
         qres = build_queries(sc["text"], avoid=avoid)
+        scene_warn, llm_info = [], None
+        if query_writer is not None:
+            try:
+                llm_info = query_writer.write(sc["text"], avoid=avoid)
+                qres = {"queries": merge_queries(llm_info["queries"], qres["queries"]),
+                        "notes": qres["notes"] + ["llm queries: %s" % llm_info["queries"]]}
+            except LLMError as exc:
+                scene_warn.append("query LLM failed (%s); used rule-based queries" % str(exc)[:120])
         cands, errs = gather(providers, qres["queries"])
-        scene_warn = ["provider error: " + e for e in errs]
+        scene_warn += ["provider error: " + e for e in errs]
         sdur = sc["end"] - sc["start"]
         src = work / ("src_%d.mp4" % i)
         clip, score, scorer_name, reason = None, None, None, None
@@ -129,6 +138,9 @@ def run_pipeline(audio_path, out_dir, *, providers, scorer, ratios=("16:9",), av
             "queries": qres["queries"], "query_notes": qres["notes"],
             "clip": clip.to_dict(), "relevance_score": score, "scorer": scorer_name,
             "reason": reason, "warnings": scene_warn,
+            "llm": ({"provider": query_writer.name, "model": llm_info["model"],
+                     "prompt_version": llm_info["prompt_version"], "output": llm_info["queries"]}
+                    if llm_info else None),
         })
         warnings += ["scene %d: %s" % (i, w) for w in scene_warn]
     timings["footage_s"] = round(time.time() - t, 2)
@@ -178,6 +190,8 @@ def run_pipeline(audio_path, out_dir, *, providers, scorer, ratios=("16:9",), av
             "ranker": {"name": scorer.name, "model": getattr(scorer, "model_name", None),
                        "weights": getattr(scorer, "pretrained", None), "version": _ver("open_clip_torch")},
             "providers": [p.name for p in providers],
+            "query_writer": ({"name": query_writer.name, "model": getattr(query_writer, "model", None),
+                              "note": "scene text is sent to a third-party API"} if query_writer else None),
         },
         "settings": {"ratios": list(ratios), "avoid": avoid or [], "captions": captions,
                      "min_scene_seconds": min_scene, "max_scene_seconds": max_scene},

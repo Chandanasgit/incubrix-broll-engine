@@ -1,5 +1,7 @@
 ﻿import re
 
+from .keywords import visual_phrases
+
 STOP = set("""a an the and or but if then so of to in on at by for with from as is are was were be been being
 it its this that these those there here he she they them we you i my our your his her their not no yes do does did
 have has had will would can could should may might just very really more most some any all each every about into
@@ -81,14 +83,19 @@ def build_queries(text, avoid=None, max_queries=3):
             used.add(word)
             notes.append("abstract word '%s' -> '%s'" % (word, q))
 
-    keywords = [t for t in tokens
-                if t not in STOP and t not in used and len(t) > 2
-                and not any(ch.isdigit() for ch in t) and "%" not in t]
-    keywords = _dedupe(keywords)
-    if keywords:
-        queries.append(" ".join(keywords[:3]))
-    if len(keywords) > 3:
-        queries.append(" ".join(keywords[3:6]))
+    phrases = visual_phrases(text, exclude=used)
+    if phrases is not None:
+        queries.extend(phrases)
+        notes.append("noun phrases used for search: %s" % phrases)
+    else:
+        keywords = [t for t in tokens
+                    if t not in STOP and t not in used and len(t) > 2
+                    and not any(ch.isdigit() for ch in t) and "%" not in t]
+        keywords = _dedupe(keywords)
+        if keywords:
+            queries.append(" ".join(keywords[:3]))
+        if len(keywords) > 3:
+            queries.append(" ".join(keywords[3:6]))
 
     if not queries:
         queries.append("abstract background")

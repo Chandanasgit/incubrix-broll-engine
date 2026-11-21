@@ -8,6 +8,7 @@ from app.providers import build_providers
 from app.ranker import ClipScorer, TagScorer
 from app.text_input import run_script
 from app.tts import build_tts
+from app.llm import build_query_writer
 
 ap = argparse.ArgumentParser()
 ap.add_argument("out")
@@ -19,10 +20,11 @@ ap.add_argument("--scorer", choices=["clip", "tag"], default="clip")
 ap.add_argument("--tts", default=None)
 ap.add_argument("--ratios", default="16:9")
 ap.add_argument("--avoid", default="")
+ap.add_argument("--llm", default=None)
 a = ap.parse_args()
 
 scorer = ClipScorer() if a.scorer == "clip" else TagScorer()
-common = dict(providers=build_providers(a.providers), scorer=scorer,
+common = dict(query_writer=build_query_writer(a.llm), providers=build_providers(a.providers), scorer=scorer,
               ratios=[r for r in a.ratios.split(",") if r],
               avoid=[x for x in a.avoid.split(",") if x],
               progress=lambda p, m: print("[%3d%%] %s" % (p, m)))
