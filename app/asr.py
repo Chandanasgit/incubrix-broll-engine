@@ -24,5 +24,5 @@ def transcribe(path):
     words = []
     for seg in segments:
         for w in seg.words:
-            words.append({"word": w.word, "start": w.start, "end": w.end})
-    return {"duration": info.duration, "words": words}
+            words.append({"word": w.word, "start": float(w.start), "end": float(w.end)})
+    return {"duration": float(info.duration), "words": words}
