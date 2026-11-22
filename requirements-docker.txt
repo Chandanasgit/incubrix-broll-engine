@@ -1,0 +1,13 @@
+fastapi==0.165.0
+uvicorn[standard]
+httpx==0.28.1
+python-multipart
+python-dotenv
+faster-whisper==1.2.1
+open_clip_torch==4.2.2
+piper-tts==1.8.0
+spacy
+numpy
+pillow
+boto3
+pytest
