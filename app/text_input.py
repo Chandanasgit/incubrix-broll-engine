@@ -22,7 +22,7 @@ def run_script(script, out_dir, *, tts, **kw):
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     audio = tts.synthesize(text, out / "narration.wav")
-    res = run_pipeline(audio, out, **kw)
+    res = run_pipeline(audio, out, script_text=text, **kw)
     mpath = out / "manifest.json"
     manifest = json.loads(mpath.read_text(encoding="utf-8"))
     manifest["input"]["type"] = "script"

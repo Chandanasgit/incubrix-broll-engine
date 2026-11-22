@@ -9,6 +9,7 @@ from pathlib import Path
 
 from .asr import transcribe
 from .errors import PipelineError
+from .align import align_script
 from .llm import LLMError, merge_queries
 from .fallback import make_fallback_clip
 from .providers.base import Clip
@@ -45,7 +46,7 @@ def _write_json(path, obj):
 
 
 def run_pipeline(audio_path, out_dir, *, providers, scorer, ratios=("16:9",), avoid=None,
-                 captions=None, job_id=None, transcribe_fn=transcribe, progress=None, query_writer=None):
+                 captions=None, job_id=None, transcribe_fn=transcribe, progress=None, query_writer=None, script_text=None):
     t_start = time.time()
     job_id = job_id or uuid.uuid4().hex[:12]
     captions = captions or {"burn_in": True, "srt": True}
@@ -82,6 +83,8 @@ def run_pipeline(audio_path, out_dir, *, providers, scorer, ratios=("16:9",), av
     if not asr["words"]:
         raise PipelineError("NO_SPEECH_DETECTED", "No speech was found in the audio.")
 
+    if script_text:
+        asr["words"] = align_script(script_text, asr["words"], asr["duration"])
     scenes = split_scenes(asr["words"], asr["duration"], min_len=min_scene, max_len=max_scene)
     progress(10, "found %d scenes" % len(scenes))
 
