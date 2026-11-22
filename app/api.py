@@ -19,6 +19,7 @@ from .errors import PipelineError
 from .jobs import IdempotencyConflict, JobStore
 from .netcheck import check_url
 from .render import RATIOS
+from .storage import build_storage
 from .text_input import prepare_text
 from .worker import Worker
 
@@ -50,15 +51,23 @@ def _iso(ts):
     return datetime.fromtimestamp(ts, timezone.utc).isoformat()
 
 
-def job_view(job):
+def job_view(job, storage=None):
     jid = job["id"]
     view = {"job_id": jid, "status": job["status"], "progress": job["progress"],
             "message": job["message"], "created_at": _iso(job["created_at"]),
             "updated_at": _iso(job["updated_at"]), "links": {"self": "/api/v1/jobs/%s" % jid}}
     if job["status"] == "succeeded" and job["result"]:
-        view["result"] = {
-            "files": {n: "/api/v1/jobs/%s/files/%s" % (jid, n) for n in job["result"]["files"]},
-            "warnings": job["result"].get("warnings", [])}
+        names = job["result"]["files"]
+        files = {n: "/api/v1/jobs/%s/files/%s" % (jid, n) for n in names}
+        where = "local"
+        if job["result"].get("storage") == "s3" and storage is not None:
+            try:
+                files = {n: storage.presign("jobs/%s/%s" % (jid, n)) for n in names}
+                where = "s3"
+            except Exception:
+                pass
+        view["result"] = {"files": files, "storage": where,
+                          "warnings": job["result"].get("warnings", [])}
     if job["status"] == "failed" and job["error"]:
         view["error"] = job["error"]
     return view
@@ -87,10 +96,11 @@ def validate_request(body):
         check_url(body.audio_url)
 
 
-def create_app(store=None, worker=None):
+def create_app(store=None, worker=None, storage=None):
     ls.setup_logging()
     store = store or JobStore()
-    worker = worker or Worker(store)
+    storage = storage if storage is not None else build_storage()
+    worker = worker or Worker(store, storage=storage)
     hits = defaultdict(deque)
 
     @asynccontextmanager
@@ -174,7 +184,13 @@ def create_app(store=None, worker=None):
             checks["storage"] = "ok"
         except OSError:
             checks["storage"] = "failed"
-        ok = all(v == "ok" for v in checks.values())
+        if storage is not None:
+            try:
+                storage.ping()
+                checks["object_storage"] = "ok"
+            except Exception:
+                checks["object_storage"] = "unavailable (API serves files itself)"
+        ok = all(v == "ok" for k, v in checks.items() if k != "object_storage")
         return JSONResponse(status_code=200 if ok else 503,
                             content={"status": "ready" if ok else "not_ready", "checks": checks})
 
@@ -194,14 +210,14 @@ def create_app(store=None, worker=None):
             log.info("job created", extra={"job_id": job["id"]})
         else:
             response.headers["Idempotent-Replayed"] = "true"
-        return job_view(job)
+        return job_view(job, storage)
 
     @app.get("/api/v1/jobs/{job_id}")
     def get_job(job_id: str):
         job = store.get(job_id)
         if job is None:
             raise ApiError(404, "JOB_NOT_FOUND", "No job with this id.")
-        return job_view(job)
+        return job_view(job, storage)
 
     @app.get("/api/v1/jobs/{job_id}/files/{name}")
     def get_file(job_id: str, name: str):

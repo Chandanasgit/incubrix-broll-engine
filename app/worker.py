@@ -38,8 +38,9 @@ def list_result_files(out_dir):
 
 
 class Worker:
-    def __init__(self, store, jobs_dir=None, concurrency=None):
+    def __init__(self, store, jobs_dir=None, concurrency=None, storage=None):
         self.store = store
+        self.storage = storage
         self.root = Path(jobs_dir or os.getenv("JOBS_DIR", "data/jobs"))
         self.root.mkdir(parents=True, exist_ok=True)
         self.pool = ThreadPoolExecutor(max_workers=int(concurrency or os.getenv("JOB_CONCURRENCY", "1")))
@@ -73,8 +74,17 @@ class Worker:
                 res = run_pipeline(audio, out, **kw)
             else:
                 res = run_script(req["script"], out, tts=build_tts(), **kw)
-            self.store.update(job_id, status="succeeded", progress=100, message="done",
-                              result={"files": list_result_files(out), "warnings": res.get("warnings", [])})
+            files = list_result_files(out)
+            result = {"files": files, "warnings": list(res.get("warnings", [])), "storage": "local"}
+            if self.storage is not None:
+                try:
+                    for name in files:
+                        self.storage.upload_file(out / name, "jobs/%s/%s" % (job_id, name))
+                    result["storage"] = "s3"
+                except Exception as exc:
+                    log.warning("upload to object storage failed: %s" % type(exc).__name__)
+                    result["warnings"].append("Object storage upload failed; files are served by the API instead.")
+            self.store.update(job_id, status="succeeded", progress=100, message="done", result=result)
             log.info("job succeeded")
         except PipelineError as exc:
             self.store.update(job_id, status="failed", message="failed", error=exc.to_dict()["error"])

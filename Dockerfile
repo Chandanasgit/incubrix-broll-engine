@@ -9,6 +9,7 @@ RUN python -m spacy download en_core_web_sm
 RUN python -m piper.download_voices en_US-ljspeech-medium --data-dir /models/voices
 RUN python -c "from faster_whisper import WhisperModel; WhisperModel('base', device='cpu', compute_type='int8')"
 RUN python -c "import open_clip; open_clip.create_model_and_transforms('ViT-B-32', pretrained='laion2b_s34b_b79k')"
+RUN pip install "moto[s3]"
 COPY app ./app
 COPY scripts ./scripts
 COPY tests ./tests
