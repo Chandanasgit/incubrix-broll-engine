@@ -70,7 +70,13 @@ class Worker:
             if ASR_OVERRIDE is not None:
                 kw["transcribe_fn"] = ASR_OVERRIDE
             if req.get("audio_url"):
-                audio = download_audio(req["audio_url"], self.root / job_id / "input_audio")
+                url = req["audio_url"]
+                if url.startswith("upload://"):
+                    audio = self.root / "uploads" / url[len("upload://"):]
+                    if not audio.is_file():
+                        raise PipelineError("UPLOAD_NOT_FOUND", "The uploaded file is no longer available.")
+                else:
+                    audio = download_audio(url, self.root / job_id / "input_audio")
                 res = run_pipeline(audio, out, **kw)
             else:
                 res = run_script(req["script"], out, tts=build_tts(), **kw)

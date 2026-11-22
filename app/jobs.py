@@ -28,6 +28,16 @@ CREATE TABLE IF NOT EXISTS jobs (
     updated_at REAL
 )
 """
+_UPLOADS_SCHEMA = """
+CREATE TABLE IF NOT EXISTS uploads (
+    id TEXT PRIMARY KEY,
+    idem_key TEXT UNIQUE,
+    sha256 TEXT,
+    filename TEXT,
+    size INTEGER,
+    created_at REAL
+)
+"""
 _JSON_COLS = ("request", "result", "error")
 _UPDATABLE = {"status", "progress", "message", "result", "error"}
 
@@ -45,6 +55,7 @@ class JobStore:
         self._conn.row_factory = sqlite3.Row
         with self._lock:
             self._conn.execute(_SCHEMA)
+            self._conn.execute(_UPLOADS_SCHEMA)
             self._conn.commit()
 
     @staticmethod
@@ -115,3 +126,20 @@ class JobStore:
     def ping(self):
         with self._lock:
             self._conn.execute("SELECT 1")
+
+    def add_upload(self, upload_id, idem_key, sha256, filename, size):
+        with self._lock:
+            self._conn.execute(
+                "INSERT INTO uploads (id, idem_key, sha256, filename, size, created_at) VALUES (?,?,?,?,?,?)",
+                (upload_id, idem_key, sha256, filename, size, time.time()))
+            self._conn.commit()
+
+    def get_upload(self, upload_id):
+        with self._lock:
+            row = self._conn.execute("SELECT * FROM uploads WHERE id = ?", (upload_id,)).fetchone()
+        return dict(row) if row else None
+
+    def get_upload_by_key(self, idem_key):
+        with self._lock:
+            row = self._conn.execute("SELECT * FROM uploads WHERE idem_key = ?", (idem_key,)).fetchone()
+        return dict(row) if row else None

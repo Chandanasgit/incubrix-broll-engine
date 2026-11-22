@@ -1,3 +1,4 @@
+import hashlib
 import os
 import shutil
 import time
@@ -7,7 +8,7 @@ from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, Header, Request, Response
+from fastapi import FastAPI, File, Header, Request, Response, UploadFile
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from pydantic import BaseModel, Field
@@ -73,7 +74,7 @@ def job_view(job, storage=None):
     return view
 
 
-def validate_request(body):
+def validate_request(body, store):
     given = [k for k in ("audio_url", "script", "scenes") if getattr(body, k) is not None]
     if len(given) != 1:
         raise ApiError(400, "INVALID_INPUT", "Provide exactly one of audio_url, script or scenes.",
@@ -93,7 +94,11 @@ def validate_request(body):
         except PipelineError as exc:
             raise from_pipeline(exc, 400)
     if body.audio_url is not None:
-        check_url(body.audio_url)
+        if body.audio_url.startswith("upload://"):
+            if store.get_upload(body.audio_url[len("upload://"):]) is None:
+                raise ApiError(400, "UPLOAD_NOT_FOUND", "No upload with this id.")
+        else:
+            check_url(body.audio_url)
 
 
 def create_app(store=None, worker=None, storage=None):
@@ -197,7 +202,7 @@ def create_app(store=None, worker=None, storage=None):
     @app.post("/api/v1/broll/jobs", status_code=202)
     def create_job(body: JobRequest, response: Response, request: Request,
                    idempotency_key: Optional[str] = Header(default=None)):
-        validate_request(body)
+        validate_request(body, store)
         payload = body.model_dump()
         try:
             job, created = store.create(payload, idem_key=idempotency_key,
@@ -211,6 +216,47 @@ def create_app(store=None, worker=None, storage=None):
         else:
             response.headers["Idempotent-Replayed"] = "true"
         return job_view(job, storage)
+
+    @app.post("/api/v1/uploads", status_code=201)
+    def upload_file(response: Response, file: UploadFile = File(...),
+                    idempotency_key: Optional[str] = Header(default=None)):
+        updir = worker.root / "uploads"
+        updir.mkdir(parents=True, exist_ok=True)
+        limit = int(float(os.getenv("MAX_UPLOAD_MB", "100")) * 1024 * 1024)
+        tmp = updir / (".tmp-" + uuid.uuid4().hex)
+        digest, size = hashlib.sha256(), 0
+        try:
+            with open(tmp, "wb") as f:
+                while True:
+                    chunk = file.file.read(65536)
+                    if not chunk:
+                        break
+                    size += len(chunk)
+                    if size > limit:
+                        raise ApiError(413, "INPUT_TOO_LARGE", "The file is larger than allowed.",
+                                       details={"max_mb": limit // (1024 * 1024)})
+                    digest.update(chunk)
+                    f.write(chunk)
+            if size == 0:
+                raise ApiError(400, "EMPTY_FILE", "The uploaded file is empty.")
+            sha = digest.hexdigest()
+            if idempotency_key:
+                existing = store.get_upload_by_key(idempotency_key)
+                if existing is not None:
+                    if existing["sha256"] != sha:
+                        raise ApiError(409, "IDEMPOTENCY_KEY_REUSED",
+                                       "This Idempotency-Key was already used with a different file.")
+                    response.headers["Idempotent-Replayed"] = "true"
+                    return {"upload_id": existing["id"], "audio_url": "upload://" + existing["id"],
+                            "size": existing["size"], "filename": existing["filename"]}
+            upload_id = uuid.uuid4().hex[:16]
+            os.replace(tmp, updir / upload_id)
+            store.add_upload(upload_id, idempotency_key, sha, file.filename or "", size)
+            return {"upload_id": upload_id, "audio_url": "upload://" + upload_id,
+                    "size": size, "filename": file.filename or ""}
+        finally:
+            if tmp.exists():
+                tmp.unlink()
 
     @app.get("/api/v1/jobs/{job_id}")
     def get_job(job_id: str):
