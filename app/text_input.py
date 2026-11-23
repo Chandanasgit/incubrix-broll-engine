@@ -1,5 +1,6 @@
 ﻿import json
 import os
+import re
 from pathlib import Path
 
 from .errors import PipelineError
@@ -7,7 +8,8 @@ from .pipeline import run_pipeline
 
 
 def prepare_text(script):
-    text = " ".join((script or "").split())
+    cleaned = re.sub("[\ufeff\u200b-\u200d\u2060]", "", script or "")
+    text = " ".join(cleaned.split())
     if not text:
         raise PipelineError("EMPTY_SCRIPT", "The script is empty.")
     limit = int(os.getenv("MAX_SCRIPT_CHARS", "12000"))

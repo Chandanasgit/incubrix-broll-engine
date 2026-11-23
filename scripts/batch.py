@@ -40,23 +40,23 @@ def load_items(path):
             ext = f.suffix.lower()
             if ext == ".txt":
                 items.append({"name": _safe(f.stem), "audio_file": None,
-                              "request": {"script": f.read_text(encoding="utf-8")}})
+                              "request": {"script": f.read_text(encoding="utf-8-sig")}})
             elif ext in AUDIO_EXT:
                 items.append({"name": _safe(f.stem), "audio_file": str(f), "request": {}})
             elif ext == ".json":
-                d = json.loads(f.read_text(encoding="utf-8"))
+                d = json.loads(f.read_text(encoding="utf-8-sig"))
                 d.setdefault("name", f.stem)
                 items.append(_from_dict(d, i))
     elif path.suffix.lower() == ".jsonl":
-        lines = [ln for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        lines = [ln for ln in path.read_text(encoding="utf-8-sig").splitlines() if ln.strip()]
         items = [_from_dict(json.loads(ln), i) for i, ln in enumerate(lines)]
     elif path.suffix.lower() == ".json":
-        data = json.loads(path.read_text(encoding="utf-8"))
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
         data = data if isinstance(data, list) else [data]
         items = [_from_dict(d, i) for i, d in enumerate(data)]
     elif path.suffix.lower() == ".txt":
         items = [{"name": _safe(path.stem), "audio_file": None,
-                  "request": {"script": path.read_text(encoding="utf-8")}}]
+                  "request": {"script": path.read_text(encoding="utf-8-sig")}}]
     elif path.suffix.lower() in AUDIO_EXT:
         items = [{"name": _safe(path.stem), "audio_file": str(path), "request": {}}]
     else:
