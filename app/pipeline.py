@@ -11,6 +11,7 @@ from .asr import transcribe
 from .errors import PipelineError
 from .align import align_script
 from .llm import LLMError, merge_queries
+from .safety import apply_safety
 from .fallback import make_fallback_clip
 from .providers.base import Clip
 from .queries import build_queries
@@ -101,6 +102,9 @@ def run_pipeline(audio_path, out_dir, *, providers, scorer, ratios=("16:9",), av
                         "notes": qres["notes"] + ["llm queries: %s" % llm_info["queries"]]}
             except LLMError as exc:
                 scene_warn.append("query LLM failed (%s); used rule-based queries" % str(exc)[:120])
+        safe_queries, safety_notes = apply_safety(sc["text"], qres["queries"], avoid=avoid)
+        qres = {"queries": safe_queries, "notes": qres["notes"] + safety_notes}
+        scene_warn += safety_notes
         cands, errs = gather(providers, qres["queries"])
         scene_warn += ["provider error: " + e for e in errs]
         sdur = sc["end"] - sc["start"]

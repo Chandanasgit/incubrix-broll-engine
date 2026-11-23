@@ -1,4 +1,4 @@
-﻿import os
+import os
 
 EXTRA_STOP = {"starting", "simple", "first", "next", "finally", "thing", "things", "way", "lot",
               "bit", "something", "everything", "anything", "time", "times", "week", "weeks",
@@ -12,7 +12,7 @@ def _get_nlp():
     if _nlp is None:
         try:
             import spacy
-            _nlp = spacy.load(os.getenv("SPACY_MODEL", "en_core_web_sm"), disable=["ner", "lemmatizer"])
+            _nlp = spacy.load(os.getenv("SPACY_MODEL", "en_core_web_sm"), disable=["lemmatizer"])
         except Exception:
             _nlp = False
     return _nlp
@@ -39,3 +39,16 @@ def visual_phrases(text, exclude=None, max_phrases=3):
             if p not in phrases:
                 phrases.append(p)
     return phrases[:max_phrases]
+
+
+def named_entities(text, labels=("PERSON", "ORG")):
+    """Names of people and organisations or brands found in the text, as (name, label) pairs."""
+    nlp = _get_nlp()
+    if not nlp:
+        return []
+    seen, out = set(), []
+    for ent in nlp(text).ents:
+        if ent.label_ in labels and len(ent.text) > 2 and ent.text.lower() not in seen:
+            seen.add(ent.text.lower())
+            out.append((ent.text, ent.label_))
+    return out
