@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,560
+City officials announced a new bicycle lane
+
+2
+00:00:02,560 --> 00:00:03,840
+across the river bridge.
+
+3
+00:00:04,120 --> 00:00:06,880
+Construction begins next month and should finish
+
+4
+00:00:06,880 --> 00:00:09,460
+before winter. Commuters say it will make
+
+5
+00:00:09,460 --> 00:00:11,240
+mornings safer and calmer.

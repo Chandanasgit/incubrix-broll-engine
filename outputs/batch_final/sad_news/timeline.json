@@ -1,0 +1,93 @@
+{
+  "job_id": "65ddcbe29ec4443a",
+  "duration": 10.089125,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "A fire at a local factory has left several families without homes.",
+      "start": 0.0,
+      "end": 4.3,
+      "queries": [
+        "local factory",
+        "several families",
+        "candle vigil night",
+        "quiet street rain"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['fire', 'local factory', 'several families']",
+        "Sensitive topic detected (fire): graphic search terms were removed and calm, respectful footage is preferred."
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "88239",
+        "page_url": "https://pixabay.com/videos/id-88239/",
+        "download_url": "https://cdn.pixabay.com/video/2021/09/11/88239-602915779_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2021/09/11/88239-602915779_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 11.0,
+        "tags": [
+          "industry",
+          "smoke",
+          "factory",
+          "bird",
+          "pollution",
+          "environment",
+          "nature"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Digital_Expert on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.21526546776294708,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.215 for queries ['local factory', 'several families', 'candle vigil night', 'quiet street rain']",
+      "warnings": [
+        "Sensitive topic detected (fire): graphic search terms were removed and calm, respectful footage is preferred."
+      ],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "Rescue teams worked through the night, and neighbours are now collecting food and blankets for those affected.",
+      "start": 4.3,
+      "end": 10.089,
+      "queries": [
+        "rescue teams",
+        "night",
+        "neighbours"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['rescue teams', 'night', 'neighbours']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "7012",
+        "page_url": "https://pixabay.com/videos/id-7012/",
+        "download_url": "https://cdn.pixabay.com/video/2017/01/03/7012-197962781_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2017/01/03/7012-197962781_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 6.0,
+        "tags": [
+          "blue light",
+          "fire fighters",
+          "mission",
+          "rescue operation",
+          "accident",
+          "rescue",
+          "ambulance",
+          "fire truck"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Thomas-Ritter on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.22551654279232025,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.226 for queries ['rescue teams', 'night', 'neighbours']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

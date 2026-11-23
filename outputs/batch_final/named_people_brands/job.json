@@ -1,0 +1,27 @@
+{
+  "job_id": "2843448c7baf40d2",
+  "status": "succeeded",
+  "progress": 100,
+  "message": "done",
+  "created_at": "2026-11-23T09:44:43.863530+00:00",
+  "updated_at": "2026-11-23T09:50:53.329431+00:00",
+  "links": {
+    "self": "/api/v1/jobs/2843448c7baf40d2"
+  },
+  "result": {
+    "files": {
+      "video_16x9.mp4": "/api/v1/jobs/2843448c7baf40d2/files/video_16x9.mp4",
+      "video_9x16.mp4": "/api/v1/jobs/2843448c7baf40d2/files/video_9x16.mp4",
+      "captions.srt": "/api/v1/jobs/2843448c7baf40d2/files/captions.srt",
+      "timeline.json": "/api/v1/jobs/2843448c7baf40d2/files/timeline.json",
+      "manifest.json": "/api/v1/jobs/2843448c7baf40d2/files/manifest.json"
+    },
+    "storage": "local",
+    "warnings": [
+      "scene 0: Named person 'Elon Musk' is not used in the footage search; generic footage is used instead.",
+      "scene 0: Named brand or organisation 'Tesla' is not used in the footage search; generic footage is used instead.",
+      "scene 1: Named brand or organisation 'Apple' is not used in the footage search; generic footage is used instead.",
+      "scene 1: Named brand or organisation 'Google' is not used in the footage search; generic footage is used instead."
+    ]
+  }
+}

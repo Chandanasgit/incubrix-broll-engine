@@ -1,0 +1,92 @@
+{
+  "job_id": "2843448c7baf40d2",
+  "duration": 8.9629375,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "Elon Musk announced that Tesla will open a new factory.",
+      "start": 0.0,
+      "end": 3.72,
+      "queries": [
+        "new factory",
+        "city street evening",
+        "modern office building"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['elon musk', 'tesla', 'new factory']",
+        "Named person 'Elon Musk' is not used in the footage search; generic footage is used instead.",
+        "Named brand or organisation 'Tesla' is not used in the footage search; generic footage is used instead."
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "271463",
+        "page_url": "https://pixabay.com/videos/id-271463/",
+        "download_url": "https://cdn.pixabay.com/video/2025/04/11/271463_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2025/04/11/271463_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 16.0,
+        "tags": [
+          "textile",
+          "worker",
+          "factory worker"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by EqualStock on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.19398756325244904,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.194 for queries ['new factory', 'city street evening', 'modern office building']",
+      "warnings": [
+        "Named person 'Elon Musk' is not used in the footage search; generic footage is used instead.",
+        "Named brand or organisation 'Tesla' is not used in the footage search; generic footage is used instead."
+      ],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "Apple and Google also expect strong sales this year, according to analysts.",
+      "start": 3.72,
+      "end": 8.963,
+      "queries": [
+        "strong sales",
+        "modern office building"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['apple', 'google', 'strong sales']",
+        "Named brand or organisation 'Apple' is not used in the footage search; generic footage is used instead.",
+        "Named brand or organisation 'Google' is not used in the footage search; generic footage is used instead."
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "9486",
+        "page_url": "https://pixabay.com/videos/id-9486/",
+        "download_url": "https://cdn.pixabay.com/video/2017/06/01/9486-220088143_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2017/06/01/9486-220088143_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 10.0,
+        "tags": [
+          "sale",
+          "sale sign",
+          "sell",
+          "buying",
+          "in fire",
+          "promotion"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by perianjs on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.17334778606891632,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.173 for queries ['strong sales', 'modern office building']",
+      "warnings": [
+        "Named brand or organisation 'Apple' is not used in the footage search; generic footage is used instead.",
+        "Named brand or organisation 'Google' is not used in the footage search; generic footage is used instead."
+      ],
+      "llm": null
+    }
+  ]
+}

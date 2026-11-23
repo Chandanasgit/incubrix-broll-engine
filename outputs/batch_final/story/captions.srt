@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:02,700
+Every morning, an old fisherman walked down
+
+2
+00:00:02,700 --> 00:00:04,240
+to the harbour before sunrise.
+
+3
+00:00:04,760 --> 00:00:05,600
+He mended his nets,
+
+4
+00:00:06,060 --> 00:00:06,940
+watched the gulls,
+
+5
+00:00:07,220 --> 00:00:08,360
+and waited for the tide.
+
+6
+00:00:08,680 --> 00:00:10,520
+One day, a small blue boat appeared
+
+7
+00:00:10,520 --> 00:00:11,280
+on the horizon.

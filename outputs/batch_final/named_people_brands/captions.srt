@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:02,560
+Elon Musk announced that Tesla will open
+
+2
+00:00:02,560 --> 00:00:03,460
+a new factory.
+
+3
+00:00:03,720 --> 00:00:06,280
+Apple and Google also expect strong sales
+
+4
+00:00:06,280 --> 00:00:08,420
+this year, according to analysts.

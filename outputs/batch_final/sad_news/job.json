@@ -1,0 +1,24 @@
+{
+  "job_id": "65ddcbe29ec4443a",
+  "status": "succeeded",
+  "progress": 100,
+  "message": "done",
+  "created_at": "2026-11-23T09:44:44.725034+00:00",
+  "updated_at": "2026-11-23T09:55:53.667775+00:00",
+  "links": {
+    "self": "/api/v1/jobs/65ddcbe29ec4443a"
+  },
+  "result": {
+    "files": {
+      "video_16x9.mp4": "/api/v1/jobs/65ddcbe29ec4443a/files/video_16x9.mp4",
+      "video_9x16.mp4": "/api/v1/jobs/65ddcbe29ec4443a/files/video_9x16.mp4",
+      "captions.srt": "/api/v1/jobs/65ddcbe29ec4443a/files/captions.srt",
+      "timeline.json": "/api/v1/jobs/65ddcbe29ec4443a/files/timeline.json",
+      "manifest.json": "/api/v1/jobs/65ddcbe29ec4443a/files/manifest.json"
+    },
+    "storage": "local",
+    "warnings": [
+      "scene 0: Sensitive topic detected (fire): graphic search terms were removed and calm, respectful footage is preferred."
+    ]
+  }
+}

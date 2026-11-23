@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:01,940
+A fire at a local factory has
+
+2
+00:00:01,940 --> 00:00:04,060
+left several families without homes.
+
+3
+00:00:04,300 --> 00:00:06,000
+Rescue teams worked through the night,
+
+4
+00:00:06,380 --> 00:00:08,380
+and neighbours are now collecting food and
+
+5
+00:00:08,380 --> 00:00:09,760
+blankets for those affected.

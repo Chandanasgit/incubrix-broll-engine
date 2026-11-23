@@ -1,0 +1,97 @@
+{
+  "job_id": "fef39b21e9154df9",
+  "duration": 10.147125,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "Meet the Solar Charger Pro. It folds flat, fits in any backpack, and charges your phone in under an hour.",
+      "start": 0.0,
+      "end": 6.52,
+      "queries": [
+        "backpack",
+        "phone",
+        "modern office building"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['solar charger pro', 'backpack', 'phone']",
+        "Named brand or organisation 'the Solar Charger Pro' is not used in the footage search; generic footage is used instead."
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "64980",
+        "page_url": "https://pixabay.com/videos/id-64980/",
+        "download_url": "https://cdn.pixabay.com/video/2021/02/12/64980-511728267_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2021/02/12/64980-511728267_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 16.0,
+        "tags": [
+          "photographer",
+          "equipment",
+          "observatory",
+          "backpack",
+          "bridge",
+          "market",
+          "walk",
+          "landscape",
+          "nature",
+          "field",
+          "nature reserve"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by danydory on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.2047141194343567,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.205 for queries ['backpack', 'phone', 'modern office building']",
+      "warnings": [
+        "Named brand or organisation 'the Solar Charger Pro' is not used in the footage search; generic footage is used instead."
+      ],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "Take it camping, on the train, or anywhere the sun shines.",
+      "start": 6.52,
+      "end": 10.147,
+      "queries": [
+        "camping",
+        "train",
+        "sun"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['camping', 'train', 'sun']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "176781",
+        "page_url": "https://pixabay.com/videos/id-176781/",
+        "download_url": "https://cdn.pixabay.com/video/2023/08/19/176781-856056389_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2023/08/19/176781-856056389_large.jpg",
+        "width": 2560,
+        "height": 1440,
+        "duration": 59.0,
+        "tags": [
+          "man",
+          "hiker",
+          "camping",
+          "sitting",
+          "peak mountain",
+          "sightseeing",
+          "scenery",
+          "listening to music",
+          "mountain peak"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by ddong8496 on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.24332432448863983,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.243 for queries ['camping', 'train', 'sun']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

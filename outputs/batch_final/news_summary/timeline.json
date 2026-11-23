@@ -1,0 +1,170 @@
+{
+  "job_id": "2dc83b083f334123",
+  "duration": 11.401,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "City officials announced a new bicycle lane across the river bridge.",
+      "start": 0.0,
+      "end": 4.12,
+      "queries": [
+        "city officials",
+        "new bicycle lane",
+        "river bridge"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['city officials', 'new bicycle lane', 'river bridge']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "195",
+        "page_url": "https://pixabay.com/videos/id-195/",
+        "download_url": "https://cdn.pixabay.com/video/2015/08/10/195-135845919_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2015/08/10/195-135845919_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 45.0,
+        "tags": [
+          "bicycles",
+          "sports",
+          "vehicles",
+          "pedestrians",
+          "bicycle lane",
+          "cycle track",
+          "bike path",
+          "cycle way",
+          "outdoors",
+          "running",
+          "runners",
+          "cyclists",
+          "people",
+          "movement",
+          "walking",
+          "steps",
+          "run",
+          "walk",
+          "road",
+          "street",
+          "busy"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Life-Of-Vids on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.253459632396698,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.253 for queries ['city officials', 'new bicycle lane', 'river bridge']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "Construction begins next month and should finish before winter.",
+      "start": 4.12,
+      "end": 7.94,
+      "queries": [
+        "construction",
+        "winter"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['construction', 'winter']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "42923",
+        "page_url": "https://pixabay.com/videos/id-42923/",
+        "download_url": "https://cdn.pixabay.com/video/2020/06/23/42923-434300950_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2020/06/23/42923-434300950_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 15.0,
+        "tags": [
+          "construction site",
+          "construction workers",
+          "construction",
+          "worker",
+          "site",
+          "builder",
+          "build",
+          "job",
+          "truck",
+          "man",
+          "housebuilding",
+          "skyscraper",
+          "Vietnam",
+          "Phu Tho",
+          "Vinh Phuc"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by chuduyen215 on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.25594282150268555,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.256 for queries ['construction', 'winter']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 2,
+      "text": "Commuters say it will make mornings safer and calmer.",
+      "start": 7.94,
+      "end": 11.401,
+      "queries": [
+        "commuters",
+        "mornings"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['commuters', 'mornings']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "9831",
+        "page_url": "https://pixabay.com/videos/id-9831/",
+        "download_url": "https://cdn.pixabay.com/video/2017/06/11/9831-221467926_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2017/06/11/9831-221467926_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 38.0,
+        "tags": [
+          "train",
+          "subway",
+          "tram",
+          "travel",
+          "transportation",
+          "station",
+          "transport",
+          "metro",
+          "railway",
+          "modern",
+          "city",
+          "rail",
+          "urban",
+          "underground",
+          "public",
+          "passenger",
+          "vehicle",
+          "transit",
+          "people",
+          "man",
+          "commuter",
+          "motion",
+          "track",
+          "traffic",
+          "tube",
+          "journey",
+          "platform",
+          "way"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Sephelonor on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.2714143395423889,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.271 for queries ['commuters', 'mornings']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

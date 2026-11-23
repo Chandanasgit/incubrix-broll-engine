@@ -1,0 +1,147 @@
+{
+  "job_id": "cf5a9d0894104149",
+  "duration": 11.5635625,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "Every morning, an old fisherman walked down to the harbour before sunrise.",
+      "start": 0.0,
+      "end": 4.76,
+      "queries": [
+        "old fisherman",
+        "harbour",
+        "sunrise"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['old fisherman', 'harbour', 'sunrise']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "362844",
+        "page_url": "https://pixabay.com/videos/id-362844/",
+        "download_url": "https://cdn.pixabay.com/video/2026/07/08/362844_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2026/07/08/362844_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 10.0,
+        "tags": [
+          "ai generated",
+          "mediterranean",
+          "fisherman",
+          "night",
+          "sea",
+          "moonlight",
+          "loop",
+          "fishing",
+          "boat",
+          "lantern",
+          "moon",
+          "reflection",
+          "peaceful",
+          "traditional",
+          "old",
+          "maritime",
+          "coast",
+          "nostalgia",
+          "wooden boat",
+          "cinematic"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by doktorkleinmusic on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.30069035291671753,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.301 for queries ['old fisherman', 'harbour', 'sunrise']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "He mended his nets, watched the gulls, and waited for the tide.",
+      "start": 4.76,
+      "end": 8.68,
+      "queries": [
+        "nets",
+        "gulls",
+        "tide"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['nets', 'gulls', 'tide']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "174537",
+        "page_url": "https://pixabay.com/videos/id-174537/",
+        "download_url": "https://cdn.pixabay.com/video/2023/08/04/174537-851792497_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2023/08/04/174537-851792497_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 21.0,
+        "tags": [
+          "gull",
+          "bird",
+          "water bird",
+          "plumage",
+          "sitting",
+          "wildlife"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by NickyPe on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.2574988901615143,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.257 for queries ['nets', 'gulls', 'tide']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 2,
+      "text": "One day, a small blue boat appeared on the horizon.",
+      "start": 8.68,
+      "end": 11.564,
+      "queries": [
+        "small blue boat",
+        "horizon"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['small blue boat', 'horizon']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "214582",
+        "page_url": "https://pixabay.com/videos/id-214582/",
+        "download_url": "https://cdn.pixabay.com/video/2024/05/30/214582_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2024/05/30/214582_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 25.0,
+        "tags": [
+          "boat",
+          "sea",
+          "lighthouse",
+          "bay",
+          "tinos",
+          "panormos",
+          "waves",
+          "greece",
+          "island",
+          "cyclades",
+          "nature",
+          "rock",
+          "coast",
+          "blue"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by lithepictures on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.3061542809009552,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.306 for queries ['small blue boat', 'horizon']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "job_id": "cf5a9d0894104149",
+  "status": "succeeded",
+  "progress": 100,
+  "message": "done",
+  "created_at": "2026-11-23T09:44:44.977570+00:00",
+  "updated_at": "2026-11-23T09:58:10.393597+00:00",
+  "links": {
+    "self": "/api/v1/jobs/cf5a9d0894104149"
+  },
+  "result": {
+    "files": {
+      "video_16x9.mp4": "/api/v1/jobs/cf5a9d0894104149/files/video_16x9.mp4",
+      "video_9x16.mp4": "/api/v1/jobs/cf5a9d0894104149/files/video_9x16.mp4",
+      "captions.srt": "/api/v1/jobs/cf5a9d0894104149/files/captions.srt",
+      "timeline.json": "/api/v1/jobs/cf5a9d0894104149/files/timeline.json",
+      "manifest.json": "/api/v1/jobs/cf5a9d0894104149/files/manifest.json"
+    },
+    "storage": "local",
+    "warnings": []
+  }
+}

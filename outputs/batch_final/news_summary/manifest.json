@@ -1,0 +1,108 @@
+{
+  "job_id": "2dc83b083f334123",
+  "created_at": "2026-11-23T09:52:56.236070+00:00",
+  "input": {
+    "file": "narration.wav",
+    "duration_s": 11.401,
+    "scenes": 3,
+    "type": "script"
+  },
+  "models": {
+    "asr": {
+      "name": "faster-whisper base",
+      "version": "1.2.1"
+    },
+    "ranker": {
+      "name": "open_clip",
+      "model": "ViT-B-32",
+      "weights": "laion2b_s34b_b79k",
+      "version": "4.2.2"
+    },
+    "providers": [
+      "pixabay"
+    ],
+    "query_writer": null,
+    "tts": {
+      "name": "piper",
+      "voice": "en_US-ljspeech-medium",
+      "ai_generated_audio": true
+    }
+  },
+  "settings": {
+    "ratios": [
+      "16:9",
+      "9:16"
+    ],
+    "avoid": [],
+    "captions": {
+      "burn_in": true,
+      "srt": true
+    },
+    "min_scene_seconds": 2.5,
+    "max_scene_seconds": 8.0
+  },
+  "seed": null,
+  "seed_note": "No randomness is used; output depends only on the input and footage search results.",
+  "timings": {
+    "asr_s": 2.6,
+    "footage_s": 96.85,
+    "render_s": 22.33,
+    "total_s": 121.85
+  },
+  "cost_estimate_usd": 0.0,
+  "cost_note": "Local models and free footage APIs; compute cost not included.",
+  "warnings": [],
+  "rights": {
+    "commercial_use_ok": true,
+    "ai_generated_clips": 0,
+    "clips": [
+      {
+        "provider": "pixabay",
+        "clip_id": "195",
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Life-Of-Vids on Pixabay",
+        "page_url": "https://pixabay.com/videos/id-195/"
+      },
+      {
+        "provider": "pixabay",
+        "clip_id": "42923",
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by chuduyen215 on Pixabay",
+        "page_url": "https://pixabay.com/videos/id-42923/"
+      },
+      {
+        "provider": "pixabay",
+        "clip_id": "9831",
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Sephelonor on Pixabay",
+        "page_url": "https://pixabay.com/videos/id-9831/"
+      }
+    ]
+  },
+  "outputs": {
+    "16:9": "video_16x9.mp4",
+    "9:16": "video_9x16.mp4"
+  },
+  "checks": {
+    "16:9": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "pix_fmt": "yuv420p",
+      "duration": 11.400998,
+      "has_audio": true,
+      "ok": true,
+      "problems": []
+    },
+    "9:16": {
+      "width": 1080,
+      "height": 1920,
+      "fps": 30.0,
+      "pix_fmt": "yuv420p",
+      "duration": 11.400998,
+      "has_audio": true,
+      "ok": true,
+      "problems": []
+    }
+  }
+}

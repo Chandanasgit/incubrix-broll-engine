@@ -1,0 +1,94 @@
+{
+  "job_id": "9466b5407945470c",
+  "duration": 11.3661875,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "To brew great coffee, start with fresh beans and clean water. Grind the beans just before brewing.",
+      "start": 0.0,
+      "end": 6.8,
+      "queries": [
+        "great coffee",
+        "fresh beans",
+        "clean water"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['great coffee', 'fresh beans', 'clean water']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "209424",
+        "page_url": "https://pixabay.com/videos/id-209424/",
+        "download_url": "https://cdn.pixabay.com/video/2024/04/25/209424_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2024/04/25/209424_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 36.0,
+        "tags": [
+          "coffee",
+          "cappuccino",
+          "caffeine",
+          "coffee funnel",
+          "processing",
+          "brew"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by NGUYENTHONG7997 on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.3025411069393158,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.303 for queries ['great coffee', 'fresh beans', 'clean water']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "Pour hot water slowly in circles, and let it drip for three minutes.",
+      "start": 6.8,
+      "end": 11.366,
+      "queries": [
+        "plant growing time lapse",
+        "hot water",
+        "circles"
+      ],
+      "query_notes": [
+        "abstract word 'slowly' -> 'plant growing time lapse'",
+        "noun phrases used for search: ['hot water', 'circles', 'minutes']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "89536",
+        "page_url": "https://pixabay.com/videos/id-89536/",
+        "download_url": "https://cdn.pixabay.com/video/2021/09/24/89536-614024920_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2021/09/24/89536-614024920_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 20.0,
+        "tags": [
+          "vine",
+          "grow",
+          "plant",
+          "spiral",
+          "sweet potato",
+          "spin",
+          "nature",
+          "timelapse",
+          "time lapse",
+          "leaves",
+          "leaf",
+          "green",
+          "twirl"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by BlenderTimer on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.19449442625045776,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.194 for queries ['plant growing time lapse', 'hot water', 'circles']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

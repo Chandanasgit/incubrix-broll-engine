@@ -1,0 +1,70 @@
+{
+  "job_id": "0d1ce75fd28a4129",
+  "duration": 10.785625,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "Trust is earned slowly. Sales grew forty percent in 2025, and customer satisfaction reached ninety two percent. Freedom is the courage to start again.",
+      "start": 0.0,
+      "end": 10.786,
+      "queries": [
+        "growth chart graph business",
+        "handshake partnership",
+        "plant growing time lapse"
+      ],
+      "query_notes": [
+        "numbers or statistics detected; using a chart-style query",
+        "abstract word 'trust' -> 'handshake partnership'",
+        "abstract word 'slowly' -> 'plant growing time lapse'",
+        "abstract word 'freedom' -> 'open landscape sunrise'",
+        "noun phrases used for search: ['sales', 'customer satisfaction', 'percent']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "48991",
+        "page_url": "https://pixabay.com/videos/id-48991/",
+        "download_url": "https://cdn.pixabay.com/video/2020/09/03/48991-457717357_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2020/09/03/48991-457717357_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 11.0,
+        "tags": [
+          "diversity",
+          "teamwork",
+          "unity",
+          "hands",
+          "friends",
+          "together",
+          "business",
+          "work",
+          "hello",
+          "team",
+          "friendship",
+          "collaboration",
+          "handshake",
+          "corporate",
+          "community",
+          "partnership",
+          "communication",
+          "support",
+          "cooperation",
+          "meeting",
+          "storiesofdiversity",
+          "success",
+          "goal",
+          "trust",
+          "agreement",
+          "union"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Mohamed_hassan on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.21247069537639618,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.212 for queries ['growth chart graph business', 'handshake partnership', 'plant growing time lapse']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

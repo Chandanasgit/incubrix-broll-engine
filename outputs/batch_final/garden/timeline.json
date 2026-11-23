@@ -1,0 +1,97 @@
+{
+  "job_id": "b2f3e7b0a7fc41ff",
+  "duration": 9.1719375,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "Starting a garden is simple. Choose a sunny spot, plant your seeds, and water them every morning.",
+      "start": 0.0,
+      "end": 6.1,
+      "queries": [
+        "garden",
+        "sunny spot",
+        "seeds"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['garden', 'sunny spot', 'seeds']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "42420",
+        "page_url": "https://pixabay.com/videos/id-42420/",
+        "download_url": "https://cdn.pixabay.com/video/2020/06/17/42420-431511648_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2020/06/17/42420-431511648_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 26.0,
+        "tags": [
+          "nature",
+          "rain",
+          "plant",
+          "water",
+          "garden",
+          "live wallpaper"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by wonderlandwoo on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.24977588653564453,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.250 for queries ['garden', 'sunny spot', 'seeds']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "Within weeks, small green shoots will appear.",
+      "start": 6.1,
+      "end": 9.172,
+      "queries": [
+        "small green shoots"
+      ],
+      "query_notes": [
+        "noun phrases used for search: ['small green shoots']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "3012",
+        "page_url": "https://pixabay.com/videos/id-3012/",
+        "download_url": "https://cdn.pixabay.com/video/2016/05/04/3012-165457856_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2016/05/04/3012-165457856_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 23.0,
+        "tags": [
+          "snail",
+          "mollusc",
+          "nature",
+          "animals",
+          "brown",
+          "shell",
+          "wildlife",
+          "exoskeleton",
+          "hardshell",
+          "life",
+          "macro",
+          "arthropod",
+          "moving",
+          "rock",
+          "small",
+          "movement",
+          "slow",
+          "slowly",
+          "yellow"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by InspiredImages on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.2268548458814621,
+      "scorer": "open_clip",
+      "reason": "best of 8 candidates by open_clip score 0.227 for queries ['small green shoots']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

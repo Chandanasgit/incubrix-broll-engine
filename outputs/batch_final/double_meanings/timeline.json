@@ -1,0 +1,171 @@
+{
+  "job_id": "62635ba56bd9469c",
+  "duration": 12.573625,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "The python slithered across the desk while the mouse stayed perfectly still.",
+      "start": 0.0,
+      "end": 3.84,
+      "queries": [
+        "computer mouse desk",
+        "desk"
+      ],
+      "query_notes": [
+        "disambiguated 'mouse' -> 'computer mouse desk'",
+        "ambiguous word 'python' has no clear context; dropped from query",
+        "noun phrases used for search: ['desk']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "336228",
+        "page_url": "https://pixabay.com/videos/id-336228/",
+        "download_url": "https://cdn.pixabay.com/video/2026/02/23/336228_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2026/02/23/336228_large.jpg",
+        "width": 3872,
+        "height": 2160,
+        "duration": 5.0,
+        "tags": [
+          "gaming mouse",
+          "mouse",
+          "hand",
+          "click",
+          "clicking",
+          "scroll",
+          "wheel",
+          "rgb",
+          "led",
+          "light",
+          "glow",
+          "technology",
+          "peripheral",
+          "hardware",
+          "computer",
+          "desk",
+          "interaction",
+          "control",
+          "button",
+          "electronics",
+          "finger",
+          "gamer",
+          "equipment",
+          "input",
+          "device"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by Solarselle77 on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.24656234681606293,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.247 for queries ['computer mouse desk', 'desk']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 1,
+      "text": "Cloud storage keeps your files safe, but a real cloud drifts across the sky.",
+      "start": 3.84,
+      "end": 8.86,
+      "queries": [
+        "data center servers technology",
+        "storage",
+        "files"
+      ],
+      "query_notes": [
+        "disambiguated 'cloud' -> 'data center servers technology'",
+        "noun phrases used for search: ['storage', 'files', 'sky']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "115996",
+        "page_url": "https://pixabay.com/videos/id-115996/",
+        "download_url": "https://cdn.pixabay.com/video/2022/05/04/115996-706324001_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2022/05/04/115996-706324001_large.jpg",
+        "width": 1920,
+        "height": 1080,
+        "duration": 10.0,
+        "tags": [
+          "cloud",
+          "background",
+          "technology",
+          "weather",
+          "internet",
+          "computer",
+          "business",
+          "storage",
+          "beautiful wallpaper",
+          "data"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by julientromeur on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.24681568145751953,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.247 for queries ['data center servers technology', 'storage', 'files']",
+      "warnings": [],
+      "llm": null
+    },
+    {
+      "index": 2,
+      "text": "The bank manager and the river guide both talk about the bank.",
+      "start": 8.86,
+      "end": 12.574,
+      "queries": [
+        "river bank nature",
+        "manager",
+        "river guide"
+      ],
+      "query_notes": [
+        "disambiguated 'bank' -> 'river bank nature'",
+        "noun phrases used for search: ['manager', 'river guide']"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "369259",
+        "page_url": "https://pixabay.com/videos/id-369259/",
+        "download_url": "https://cdn.pixabay.com/video/2026/08/07/369259_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2026/08/07/369259_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 14.0,
+        "tags": [
+          "fly fishing",
+          "patagonia",
+          "chile",
+          "fishing",
+          "river",
+          "landscape",
+          "scenic",
+          "sunset",
+          "evening",
+          "morning",
+          "golden hour",
+          "bank",
+          "fish",
+          "angle",
+          "sport",
+          "south america",
+          "remote",
+          "beautiful",
+          "nature",
+          "4k",
+          "clouds",
+          "sky",
+          "stunning",
+          "adventure",
+          "travel"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by JoshuaWoroniecki on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.173860102891922,
+      "scorer": "open_clip",
+      "reason": "best of 10 candidates by open_clip score 0.174 for queries ['river bank nature', 'manager', 'river guide']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

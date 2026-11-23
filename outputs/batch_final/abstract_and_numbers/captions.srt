@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:01,240
+Trust is earned slowly.
+
+2
+00:00:01,600 --> 00:00:04,740
+Sales grew forty percent in 2025,
+
+3
+00:00:05,340 --> 00:00:08,520
+and customer satisfaction reached ninety two percent.
+
+4
+00:00:08,520 --> 00:00:10,500
+Freedom is the courage to start again.

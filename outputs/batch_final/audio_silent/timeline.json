@@ -1,0 +1,57 @@
+{
+  "job_id": "cacd4a523f814552",
+  "duration": 5.0,
+  "scenes": [
+    {
+      "index": 0,
+      "text": "You",
+      "start": 0.0,
+      "end": 5.0,
+      "queries": [
+        "abstract background"
+      ],
+      "query_notes": [
+        "noun phrases used for search: []",
+        "no usable keywords; using a generic fallback query"
+      ],
+      "clip": {
+        "provider": "pixabay",
+        "clip_id": "14662",
+        "page_url": "https://pixabay.com/videos/id-14662/",
+        "download_url": "https://cdn.pixabay.com/video/2018/03/03/14662-258508765_large.mp4",
+        "thumbnail_url": "https://cdn.pixabay.com/video/2018/03/03/14662-258508765_large.jpg",
+        "width": 3840,
+        "height": 2160,
+        "duration": 23.0,
+        "tags": [
+          "abstract",
+          "motion backgrounds",
+          "background abstract",
+          "motion",
+          "design",
+          "backgrounds abstract",
+          "backdrop",
+          "blue background abstract",
+          "abstract background",
+          "abstract blue background",
+          "abstraction",
+          "texture",
+          "blue abstract background",
+          "colorful abstract background",
+          "presentation",
+          "abstract backgrounds",
+          "modern",
+          "color"
+        ],
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by jeremiah7 on Pixabay",
+        "ai_generated": false
+      },
+      "relevance_score": 0.18268272280693054,
+      "scorer": "open_clip",
+      "reason": "best of 8 candidates by open_clip score 0.183 for queries ['abstract background']",
+      "warnings": [],
+      "llm": null
+    }
+  ]
+}

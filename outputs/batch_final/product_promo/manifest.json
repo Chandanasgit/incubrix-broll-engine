@@ -1,0 +1,103 @@
+{
+  "job_id": "fef39b21e9154df9",
+  "created_at": "2026-11-23T09:54:59.607887+00:00",
+  "input": {
+    "file": "narration.wav",
+    "duration_s": 10.147125,
+    "scenes": 2,
+    "type": "script"
+  },
+  "models": {
+    "asr": {
+      "name": "faster-whisper base",
+      "version": "1.2.1"
+    },
+    "ranker": {
+      "name": "open_clip",
+      "model": "ViT-B-32",
+      "weights": "laion2b_s34b_b79k",
+      "version": "4.2.2"
+    },
+    "providers": [
+      "pixabay"
+    ],
+    "query_writer": null,
+    "tts": {
+      "name": "piper",
+      "voice": "en_US-ljspeech-medium",
+      "ai_generated_audio": true
+    }
+  },
+  "settings": {
+    "ratios": [
+      "16:9",
+      "9:16"
+    ],
+    "avoid": [],
+    "captions": {
+      "burn_in": true,
+      "srt": true
+    },
+    "min_scene_seconds": 2.5,
+    "max_scene_seconds": 8.0
+  },
+  "seed": null,
+  "seed_note": "No randomness is used; output depends only on the input and footage search results.",
+  "timings": {
+    "asr_s": 3.96,
+    "footage_s": 100.34,
+    "render_s": 17.31,
+    "total_s": 121.7
+  },
+  "cost_estimate_usd": 0.0,
+  "cost_note": "Local models and free footage APIs; compute cost not included.",
+  "warnings": [
+    "scene 0: Named brand or organisation 'the Solar Charger Pro' is not used in the footage search; generic footage is used instead."
+  ],
+  "rights": {
+    "commercial_use_ok": true,
+    "ai_generated_clips": 0,
+    "clips": [
+      {
+        "provider": "pixabay",
+        "clip_id": "64980",
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by danydory on Pixabay",
+        "page_url": "https://pixabay.com/videos/id-64980/"
+      },
+      {
+        "provider": "pixabay",
+        "clip_id": "176781",
+        "licence": "Pixabay Content Licence",
+        "attribution": "Video by ddong8496 on Pixabay",
+        "page_url": "https://pixabay.com/videos/id-176781/"
+      }
+    ]
+  },
+  "outputs": {
+    "16:9": "video_16x9.mp4",
+    "9:16": "video_9x16.mp4"
+  },
+  "checks": {
+    "16:9": {
+      "width": 1920,
+      "height": 1080,
+      "fps": 30.0,
+      "pix_fmt": "yuv420p",
+      "duration": 10.147007,
+      "has_audio": true,
+      "ok": true,
+      "problems": []
+    },
+    "9:16": {
+      "width": 1080,
+      "height": 1920,
+      "fps": 30.0,
+      "pix_fmt": "yuv420p",
+      "duration": 10.147007,
+      "has_audio": true,
+      "ok": true,
+      "problems": []
+    }
+  }
+}

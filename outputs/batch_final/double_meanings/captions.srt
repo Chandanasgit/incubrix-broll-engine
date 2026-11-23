@@ -1,0 +1,23 @@
+1
+00:00:00,000 --> 00:00:01,880
+The python slithered across the desk while
+
+2
+00:00:01,880 --> 00:00:03,520
+the mouse stayed perfectly still.
+
+3
+00:00:03,840 --> 00:00:05,960
+Cloud storage keeps your files safe,
+
+4
+00:00:06,360 --> 00:00:08,260
+but a real cloud drifts across the
+
+5
+00:00:08,260 --> 00:00:10,480
+sky. The bank manager and the river
+
+6
+00:00:10,480 --> 00:00:12,320
+guide both talk about the bank.
