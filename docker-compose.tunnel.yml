@@ -1,0 +1,4 @@
+services:
+  api:
+    environment:
+      S3_BUCKET: ""
